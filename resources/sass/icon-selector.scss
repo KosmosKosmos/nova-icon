@@ -1,0 +1,52 @@
+.icon-selector {
+    box-shadow: 0 0 10px rgba(0,0,0,.4);
+    border-radius: 3px;
+    width: 400px;
+    position: absolute;
+    margin-top: 10px;
+    background-color: #fff;
+    input {
+        border-bottom: solid 1px #DDD;
+        border-radius: 0;
+        &:active, &:focus {
+            border-radius: 0;
+        }
+    }
+    .icon-list {
+        overflow-y: auto;
+        max-height: 400px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 50px);
+        grid-gap: 1rem .5rem;
+        justify-content: space-between;
+        & > div {
+            cursor: pointer;
+            padding: 7px 5px;
+            background-color: transparent;
+            transition: all .3s;
+            text-align: center;
+            &.active {
+                color: var(--primary);
+            }
+
+            &:hover, &.active:hover {
+                position: relative;
+                background-color: var(--primary);
+                color: #fff;
+            }
+        }
+    }
+    &:before {
+        content: '';
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #fff;
+        position: absolute;
+        left: 10px;
+        top: -10px;
+    }
+}
+
+.selected-icon {
+    cursor: context-menu;
+}
